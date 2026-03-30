@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.themeColor {
+  background: linear-gradient(90deg, #4F39F6 0%, #951BFF 100%);
+}
+
+.themeText {
+  background: linear-gradient(90deg, #4F39F6 0%, #951BFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
