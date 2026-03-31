@@ -6,7 +6,13 @@ import Navbar from './components/navbar/Navbar'
 import ProductsSection from './components/ProductsSection/ProductsSection'
 import StatBelt from './components/statBelt/StatBelt'
 
+const fetchData = fetch("/data.json")
+  .then(res => res.json())
+
+
 function App() {
+
+
 
   const [carts, setCarts] = useState([]);
 
@@ -16,7 +22,7 @@ function App() {
       <Navbar />
       <Banner />
       <StatBelt />
-      <ProductsSection carts={carts} setCarts={setCarts} />
+      <ProductsSection fetchData={fetchData} carts={carts} setCarts={setCarts} />
     </>
   )
 }

@@ -4,13 +4,10 @@ import ProductsGrid from '../ProductsGrid/ProductsGrid';
 import CartProducts from '../cartProducts/CartProducts';
 
 
-const fetchData = async () => {
-    const res = await fetch("/data.json");
-    return res.json();
-}
 
-const ProductsSection = ({ carts, setCarts }) => {
-    const dataPromise = fetchData();
+
+const ProductsSection = ({ fetchData, carts, setCarts }) => {
+
     const [selectCart, setSelectCart] = useState(false)
 
     return (
@@ -20,15 +17,15 @@ const ProductsSection = ({ carts, setCarts }) => {
                     <h1 className='text-2xl font-bold'>Premium Digital Tools</h1>
                     <p className='Text-xs text-black/60'> Choose from our curated collection of premium digital products designed <br /> to boost your productivity and creativity.</p>
                 </div>
-                <ProductsTabs setSelectCart={setSelectCart} selectCart={selectCart} />
+                <ProductsTabs setSelectCart={setSelectCart} selectCart={selectCart} carts={carts} />
 
             </div>
             <div>
                 {selectCart ?
-                    <CartProducts carts={carts} setCarts={selectCart} />
+                    <CartProducts carts={carts} setCarts={setCarts} />
                     :
                     <Suspense>
-                        <ProductsGrid dataPromise={dataPromise} carts={carts} setCarts={setCarts} />
+                        <ProductsGrid fetchData={fetchData} carts={carts} setCarts={setCarts} />
                     </Suspense>
                 }
             </div>

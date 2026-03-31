@@ -1,8 +1,12 @@
 import React from "react";
 import { LuShoppingCart } from "react-icons/lu";
 
-const CartProducts = ({ carts }) => {
+const CartProducts = ({ carts, setCarts }) => {
     const totalPrice = carts.reduce((sum, item) => sum + item.price, 0)
+    const removeFromCart = (item) => {
+        const filterCart = carts.filter(cart => cart.id !== item.id)
+        setCarts(filterCart)
+    }
     return (
         <div className="w-10/12 mx-auto">
             <h3 className="text-2xl">Your cart</h3>
@@ -31,16 +35,18 @@ const CartProducts = ({ carts }) => {
                                 </div>
                             </div>
 
-                            <button className="text-red-500 p-2">Remove</button>
+                            <button onClick={() => removeFromCart(item)} className="text-red-500 p-2">Remove</button>
                         </div>
                     ))}
+                    <div className="flex justify-between p-3">
+                        <div>Total</div>
+                        <div className="font-bold"><span>${totalPrice}</span></div>
+                    </div>
+                    <button className='themeColor w-full text-white my-3 p-2 rounded-full '>Proceed to Checkout</button>
                 </div>
             )}
-            <div className="flex justify-between p-3">
-                <div>Total</div>
-                <div className="font-bold"><span>${totalPrice}</span></div>
-            </div>
-            <button className='themeColor w-full text-white my-3 p-2 rounded-full '>Proceed to Checkout</button>
+
+
         </div>
     );
 };
