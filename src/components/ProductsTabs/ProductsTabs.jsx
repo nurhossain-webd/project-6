@@ -1,10 +1,12 @@
 import React from 'react';
 
-const ProductsTabs = () => {
+const ProductsTabs = ({ selectCart, setSelectCart }) => {
     return (
         <div role="tablist" className="tabs tabs-box flex justify-center mt-3">
-            <a role="tab" className="tab rounded-full px-6 themeColor text-white tab-active">Products</a>
-            <a role="tab" className="tab rounded-full px-6 themeText">cart (2) </a>
+            <a onClick={() => setSelectCart(false)} role="tab" className={`"tab rounded-full px-6 ${selectCart ? "themeText" : "themeColor text-white tab-active"} 
+            `}>Products</a>
+            <a onClick={() => setSelectCart(true)} role="tab" className={`"tab rounded-full px-6 ${selectCart ? "themeColor text-white tab-active" : "themeText"} 
+            `}>cart (2) </a>
         </div>
     );
 };

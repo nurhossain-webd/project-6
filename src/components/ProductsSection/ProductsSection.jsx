@@ -1,6 +1,7 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import ProductsTabs from '../ProductsTabs/ProductsTabs';
 import ProductsGrid from '../ProductsGrid/ProductsGrid';
+import CartProducts from '../cartProducts/CartProducts';
 
 
 const fetchData = async () => {
@@ -10,6 +11,7 @@ const fetchData = async () => {
 
 const ProductsSection = () => {
     const dataPromise = fetchData();
+    const [selectCart, setSelectCart] = useState(false)
     return (
         <>
             <div className='my-20 text-center'>
@@ -17,13 +19,17 @@ const ProductsSection = () => {
                     <h1 className='text-2xl font-bold'>Premium Digital Tools</h1>
                     <p className='Text-xs text-black/60'> Choose from our curated collection of premium digital products designed <br /> to boost your productivity and creativity.</p>
                 </div>
-                <ProductsTabs />
+                <ProductsTabs setSelectCart={setSelectCart} selectCart={selectCart} />
 
             </div>
             <div>
-                <Suspense>
-                    <ProductsGrid dataPromise={dataPromise} />
-                </Suspense>
+                {selectCart ?
+                    <CartProducts />
+                    :
+                    <Suspense>
+                        <ProductsGrid dataPromise={dataPromise} />
+                    </Suspense>
+                }
             </div>
         </>
 
