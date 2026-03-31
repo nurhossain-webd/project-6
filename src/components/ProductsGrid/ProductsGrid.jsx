@@ -2,11 +2,11 @@ import React, { use } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 
 
-const ProductsGrid = ({ dataPromise }) => {
+const ProductsGrid = ({ dataPromise, carts, setCarts }) => {
     const data = use(dataPromise)
     return (
         <div className='grid grid-cols-3 gap-4 w-10/12 mx-auto'>
-            {data.map(cardData => <ProductCard key={cardData.id} cardData={cardData} />)}
+            {data.map(cardData => <ProductCard key={cardData.id} cardData={cardData} carts={carts} setCarts={setCarts} />)}
 
         </div>
     );

@@ -9,9 +9,10 @@ const fetchData = async () => {
     return res.json();
 }
 
-const ProductsSection = () => {
+const ProductsSection = ({ carts, setCarts }) => {
     const dataPromise = fetchData();
     const [selectCart, setSelectCart] = useState(false)
+
     return (
         <>
             <div className='my-20 text-center'>
@@ -24,10 +25,10 @@ const ProductsSection = () => {
             </div>
             <div>
                 {selectCart ?
-                    <CartProducts />
+                    <CartProducts carts={carts} setCarts={selectCart} />
                     :
                     <Suspense>
-                        <ProductsGrid dataPromise={dataPromise} />
+                        <ProductsGrid dataPromise={dataPromise} carts={carts} setCarts={setCarts} />
                     </Suspense>
                 }
             </div>

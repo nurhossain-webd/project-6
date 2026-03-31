@@ -1,19 +1,46 @@
-import React from 'react';
+import React from "react";
 import { LuShoppingCart } from "react-icons/lu";
 
-const CartProducts = () => {
+const CartProducts = ({ carts }) => {
+    const totalPrice = carts.reduce((sum, item) => sum + item.price, 0)
     return (
-        <div className='w-10/12 mx-auto'>
-            <h3 className='text-2xl'>Your cart</h3>
+        <div className="w-10/12 mx-auto">
+            <h3 className="text-2xl">Your cart</h3>
 
-
-            <div className="min-h-[60vh] flex items-center justify-center">
-                <div className="text-center">
-                    <LuShoppingCart className="mx-auto text-6xl text-black/30" />
-                    <p className="text-black/30 mt-2">Your cart is empty</p>
+            {carts.length === 0 ? (
+                <div className="min-h-[60vh] flex items-center justify-center">
+                    <div className="text-center">
+                        <LuShoppingCart className="mx-auto text-6xl text-black/30" />
+                        <p className="text-black/30 mt-2">Your cart is empty</p>
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div className="mt-6 space-y-3">
+                    {carts.map((item) => (
+                        <div
+                            key={item.id}
+                            className="flex items-center justify-between border border-black/10 rounded-xl p-4 shadow-sm"
+                        >
+                            <div className="flex items-center gap-3">
+                                <img src={item.icon} alt="" />
+                                <div>
+                                    <p className="font-semibold">{item.name}</p>
+                                    <p className="text-sm text-black/60">
+                                        ${item.price}
+                                    </p>
+                                </div>
+                            </div>
 
+                            <button className="text-red-500 p-2">Remove</button>
+                        </div>
+                    ))}
+                </div>
+            )}
+            <div className="flex justify-between p-3">
+                <div>Total</div>
+                <div className="font-bold"><span>${totalPrice}</span></div>
+            </div>
+            <button className='themeColor w-full text-white my-3 p-2 rounded-full '>Proceed to Checkout</button>
         </div>
     );
 };

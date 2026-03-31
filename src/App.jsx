@@ -1,4 +1,5 @@
 
+import { useState } from 'react'
 import './App.css'
 import Banner from './components/banner/Banner'
 import Navbar from './components/navbar/Navbar'
@@ -7,13 +8,15 @@ import StatBelt from './components/statBelt/StatBelt'
 
 function App() {
 
+  const [carts, setCarts] = useState([]);
+
 
   return (
     <>
       <Navbar />
       <Banner />
       <StatBelt />
-      <ProductsSection />
+      <ProductsSection carts={carts} setCarts={setCarts} />
     </>
   )
 }
