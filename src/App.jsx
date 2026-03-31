@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar carts={carts} />
       <Banner />
       <StatBelt />
       <ProductsSection fetchData={fetchData} carts={carts} setCarts={setCarts} />

@@ -42,7 +42,7 @@ const CartProducts = ({ carts, setCarts }) => {
                         <div>Total</div>
                         <div className="font-bold"><span>${totalPrice}</span></div>
                     </div>
-                    <button className='themeColor w-full text-white my-3 p-2 rounded-full '>Proceed to Checkout</button>
+                    <button onClick={() => setCarts([])} className='themeColor w-full text-white my-3 p-2 rounded-full '>Proceed to Checkout</button>
                 </div>
             )}
 

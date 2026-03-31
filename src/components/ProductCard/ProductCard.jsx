@@ -40,7 +40,7 @@ const ProductCard = ({ cardData, carts, setCarts }) => {
                     </div>
                 </div>
 
-                <button onClick={handleBuy} className='themeColor w-full text-white my-3 p-2 rounded-full '>{buyNow ? "Added to Cart" : "Buy Now"}</button>
+                <button onClick={handleBuy} className={` ${buyNow ? 'bg-green-700' : 'themeColor'} w-full text-white my-3 p-2 rounded-full `}>{buyNow ? "Added to Cart" : "Buy Now"}</button>
 
             </div>
 
