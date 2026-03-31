@@ -11,19 +11,22 @@ const fetchData = async () => {
 const ProductsSection = () => {
     const dataPromise = fetchData();
     return (
-        <div className='my-20 text-center'>
-            <div className='space-y-4'>
-                <h1 className='text-2xl font-bold'>Premium Digital Tools</h1>
-                <p className='Text-xs text-black/60'> Choose from our curated collection of premium digital products designed <br /> to boost your productivity and creativity.</p>
+        <>
+            <div className='my-20 text-center'>
+                <div className='space-y-4'>
+                    <h1 className='text-2xl font-bold'>Premium Digital Tools</h1>
+                    <p className='Text-xs text-black/60'> Choose from our curated collection of premium digital products designed <br /> to boost your productivity and creativity.</p>
+                </div>
+                <ProductsTabs />
+
             </div>
-            <ProductsTabs />
-            <Suspense>
-                <ProductsGrid dataPromise={dataPromise} />
-            </Suspense>
+            <div>
+                <Suspense>
+                    <ProductsGrid dataPromise={dataPromise} />
+                </Suspense>
+            </div>
+        </>
 
-
-
-        </div>
     );
 };
 

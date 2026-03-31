@@ -12,7 +12,7 @@
             "50+ writing templates",
             "Grammar checker"
         ],
-        "icon": "✍️"
+        "icon": "https://i.ibb.co/nNLWBx2R/writing-2327400-1.png"
     },
     {
         "id": 2,
@@ -27,7 +27,7 @@
             "Monthly updates",
             "Commercial license"
         ],
-        "icon": "🎨"
+        "icon": "https://i.ibb.co/v6M6KJdj/operation.png"
     },
     {
         "id": 3,
@@ -42,7 +42,7 @@
             "Commercial use",
             "No attribution required"
         ],
-        "icon": "📸"
+        "icon": "https://i.ibb.co/ycFZ6yPh/camera-8775444-1.png"
     },
     {
         "id": 4,
@@ -57,7 +57,7 @@
             "API access",
             "Custom workflows"
         ],
-        "icon": "⚙️"
+        "icon": "https://i.ibb.co/v6M6KJdj/operation.png"
     },
     {
         "id": 5,
@@ -72,7 +72,7 @@
             "ATS optimization",
             "Export to PDF"
         ],
-        "icon": "📄"
+        "icon": "https://i.ibb.co/zWMVS6JF/portfolio.png"
     },
     {
         "id": 6,
@@ -87,7 +87,7 @@
             "Scheduler included",
             "Analytics dashboard"
         ],
-        "icon": "📣"
+        "icon": "https://i.ibb.co/bj35LdFL/social-media.png"
     },
     {
         "id": 7,
@@ -102,7 +102,7 @@
             "Dark mode ready",
             "Figma + React versions"
         ],
-        "icon": "🧩"
+        "icon": "https://i.ibb.co/67ddcZJn/UI-omponent.png"
     },
     {
         "id": 8,
@@ -117,6 +117,6 @@
             "Version history",
             "Team sharing"
         ],
-        "icon": "☁️"
+        "icon": "https://i.ibb.co/Q3LcZZKC/Cloud-Storage-Plus.webp"
     }
 ]
