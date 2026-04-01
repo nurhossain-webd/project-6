@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LuCheck } from "react-icons/lu";
+import { toast, Zoom } from 'react-toastify';
 
 const ProductCard = ({ cardData, carts, setCarts }) => {
     const badgeClass =
@@ -14,6 +15,8 @@ const ProductCard = ({ cardData, carts, setCarts }) => {
     const handleBuy = () => {
         setBuyNow(true);
         setCarts([...carts, cardData]);
+
+
     };
 
     return (
@@ -44,7 +47,15 @@ const ProductCard = ({ cardData, carts, setCarts }) => {
                 </div>
 
                 <button
-                    onClick={handleBuy}
+                    onClick={() => {
+                        handleBuy();
+                        toast.success(`${cardData.name} added to cart`, {
+                            position: "top-right",
+                            autoClose: 1500,
+
+                            transition: Zoom,
+                        });
+                    }}
                     className={`${buyNow ? 'bg-green-700' : 'themeColor'} w-full text-white my-3 p-2 sm:p-3 rounded-full text-xs sm:text-sm`}
                 >
                     {buyNow ? "Added to Cart" : "Buy Now"}

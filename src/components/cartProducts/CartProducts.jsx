@@ -1,5 +1,6 @@
 import React from "react";
 import { LuShoppingCart } from "react-icons/lu";
+import { toast, Zoom } from "react-toastify";
 
 const CartProducts = ({ carts, setCarts }) => {
     const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
@@ -38,7 +39,13 @@ const CartProducts = ({ carts, setCarts }) => {
                             </div>
 
                             <button
-                                onClick={() => removeFromCart(item)}
+                                onClick={() => {
+                                    removeFromCart(item), toast.error(`${item.name} removed cart`, {
+                                        position: "top-right",
+                                        autoClose: 1500,
+                                        transition: Zoom,
+                                    });
+                                }}
                                 className="text-red-500 p-2 text-sm sm:text-base self-start sm:self-auto"
                             >
                                 Remove
@@ -54,7 +61,14 @@ const CartProducts = ({ carts, setCarts }) => {
                     </div>
 
                     <button
-                        onClick={() => setCarts([])}
+                        onClick={() => {
+                            toast.success(`Order placed for $${totalPrice}`, {
+                                position: "top-right",
+                                autoClose: 1500,
+                                transition: Zoom,
+                            });
+                            setCarts([]);
+                        }}
                         className="themeColor w-full text-white my-3 p-2 sm:p-3 rounded-full text-sm sm:text-base"
                     >
                         Proceed to Checkout

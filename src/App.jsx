@@ -9,6 +9,7 @@ import GetStarted from './components/getStartet/GetStarted'
 import Pricing from './components/pricing/Pricing'
 import ReadyBadge from './components/readyBadge/ReadyBadge'
 import Footer from './components/footer /Footer'
+import { ToastContainer, } from 'react-toastify';
 
 const fetchData = fetch("/data.json")
   .then(res => res.json())
@@ -31,6 +32,7 @@ function App() {
       <Pricing />
       <ReadyBadge />
       <Footer />
+      <ToastContainer />
     </>
   )
 }
