@@ -26,5 +26,5 @@ Users can use toggle buttons to move between the Products and Cart sections. The
 The website uses React-Toastify to show alerts that let you add items to your cart, take them out, and go to checkout.
 
 # Links that work
-- GitHub Repository: [Put your GitHub link here]
-- Live Site: [Put your Live Site link here]
+- GitHub Repository:https://github.com/nurhossain-webd/project-6.git 
+- Live Site: https://digitools-by-nur.netlify.app/
