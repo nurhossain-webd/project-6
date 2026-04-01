@@ -1,16 +1,30 @@
-# React + Vite
+# Project Name: DigiTools - A Place to Buy Digital Tools
+# Description:
+DigiTools is a modern, mobile-friendly website for buying digital tools that was made for people who want to quickly find high-quality digital goods.  
+It lets people look at different tools, see detailed product information, and easily manage their cart.  
+There is a clean product section, a cart system, a pricing area, a steps section, and a well-organized footer on the website.  
+It was made using the Figma layout that was given, and it works well on phones, tablets, and computers.  
+The project is all about making the design look good and the user experience fun.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Technologies Used
+- React
+- JavaScript (ES6+)
+- CSS3
+- Tailwind- DaisyUI
+- React-Toastify (NPM Package)
+- HTML5
+- JSON
 
-Currently, two official plugins are available:
+# Important Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Switch between products and the cart
+Users can use toggle buttons to move between the Products and Cart sections. The product section is shown by default.
 
-## React Compiler
+2. Dynamic Cart Functionality Users can add items to the cart, see the cart count change in the navbar, take items out of the cart, and use the Proceed to Checkout button to clear the cart.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Alerts for Toast Notifications
+The website uses React-Toastify to show alerts that let you add items to your cart, take them out, and go to checkout.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Links that work
+- GitHub Repository: [Put your GitHub link here]
+- Live Site: [Put your Live Site link here]
