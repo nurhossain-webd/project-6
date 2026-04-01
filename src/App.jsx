@@ -8,6 +8,7 @@ import StatBelt from './components/statBelt/StatBelt'
 import GetStarted from './components/getStartet/GetStarted'
 import Pricing from './components/pricing/Pricing'
 import ReadyBadge from './components/readyBadge/ReadyBadge'
+import Footer from './components/footer /Footer'
 
 const fetchData = fetch("/data.json")
   .then(res => res.json())
@@ -29,6 +30,7 @@ function App() {
       <GetStarted />
       <Pricing />
       <ReadyBadge />
+      <Footer />
     </>
   )
 }

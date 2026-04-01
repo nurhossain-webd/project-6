@@ -29,13 +29,13 @@ const ProductCard = ({ cardData, carts, setCarts }) => {
                     <div>
                         <img className="h-8 sm:h-10" src={cardData.icon} alt="" />
                         <h2 className="text-lg sm:text-xl font-bold my-3">{cardData.name}</h2>
-                        <p className="text-xs sm:text-sm leading-relaxed">{cardData.description}</p>
+                        <p className="text-xs text-black/60 sm:text-sm leading-relaxed">{cardData.description}</p>
                         <p className="my-2">
                             <span className="text-lg sm:text-xl font-bold">${cardData.price}</span>/{cardData.period}
                         </p>
 
                         {cardData.features.map((feature, idx) => (
-                            <p key={idx} className="flex gap-2 items-center mb-1">
+                            <p key={idx} className="flex gap-2 items-center mb-1 text-black/60">
                                 <LuCheck className="text-green-500 font-bold text-sm sm:text-base" />
                                 <span className="text-xs sm:text-sm">{feature}</span>
                             </p>
