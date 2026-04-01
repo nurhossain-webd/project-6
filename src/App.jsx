@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar'
 import ProductsSection from './components/ProductsSection/ProductsSection'
 import StatBelt from './components/statBelt/StatBelt'
 import GetStarted from './components/getStartet/GetStarted'
+import Pricing from './components/pricing/Pricing'
 
 const fetchData = fetch("/data.json")
   .then(res => res.json())
@@ -25,6 +26,7 @@ function App() {
       <StatBelt />
       <ProductsSection fetchData={fetchData} carts={carts} setCarts={setCarts} />
       <GetStarted />
+      <Pricing />
     </>
   )
 }
